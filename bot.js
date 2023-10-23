@@ -1,6 +1,9 @@
+// 6369814035:AAFSNj1X7t247nUA9BOIoHAgW_ZlTBfzuQs 6498144305
+
 const express = require('express');
 const TelegramBot = require('node-telegram-bot-api');
 const bodyParser = require('body-parser');
+const cors = require('cors'); // Импортируйте пакет cors
 
 const botToken = '6369814035:AAFSNj1X7t247nUA9BOIoHAgW_ZlTBfzuQs'; // Замените на токен вашего бота
 const chatId = '6498144305'; // Замените на Chat ID вашего бота
@@ -8,6 +11,8 @@ const chatId = '6498144305'; // Замените на Chat ID вашего бо�
 const bot = new TelegramBot(botToken, { polling: true });
 
 const app = express();
+
+app.use(cors()); // Используйте пакет cors для разрешения CORS
 
 app.use(bodyParser.urlencoded({ extended: true }));
 
